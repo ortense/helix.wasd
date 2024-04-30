@@ -1,0 +1,78 @@
+keyword  = "pitaya"
+string   = "avocado"
+type     = "mirtilo"
+function = "figo"
+operator = "banana"
+error    = "morango"
+warning  = "banana"
+hint     = "avocado"
+
+comment = { fg = "baunilha", modifiers = [ "dim", "italic"] }
+
+namespace = { fg = "banana", modifiers = ["italic"] }
+
+"variable.builtin"   = "tomate"
+"variable.parameter" = "mirtilo"
+"constant.builtin"   = "pessego"
+"constant.numeric"   = "banana"
+
+"ui.text"       = { fg = "baunilha", bg = "amora" }
+"ui.background" = { fg = "baunilha", bg = "amora" }
+"ui.selection"  = { bg = "uva" }
+
+"ui.linenr"          = { fg = "baunilha", modifiers = [ "dim", "italic"] } 
+"ui.linenr.selected" = { fg = "baunilha", modifiers = [ "bold", "italic"] } 
+
+"ui.virtual"              = { bg = "amora" }
+"ui.virtual.ruler"        = { bg = "uva" }
+"ui.virtual.indent-guide" = { fg = "baunilha", modifiers = [ "dim" ] }
+
+"ui.statusline"          = { fg = "figo", bg = "amora" }
+"ui.statusline.normal"   = { fg = "figo", bg = "amora" }
+"ui.statusline.insert"   = { fg = "amora", bg = "avocado" }
+"ui.statusline.select"   = { fg = "amora", bg = "pessego" }
+"ui.statusline.inactive" = { fg = "figo", modifiers = ["dim"] }
+
+"ui.menu.selected" = { fg = "mirtilo" }
+"ui.menu.scroll"   = { fg = "baunilha", bg = "figo" }
+
+"ui.debug.breakpoint" = "morango"
+
+"ui.popup"      = { bg = "amora" }
+"ui.popup.info" = { bg = "amora" }
+"ui.help" = { bg = "amora" }
+# "ui.cursor.primary.normal" = { bg = "figo" }
+"ui.cursor.primary.insert" = { bg = "avocado" }
+"ui.cursor.primary.select" = { bg = "pessego" }
+"ui.cursor.match" = { fg = "pessego", modifiers = ["bold"]  }
+
+"diff.plus"  = "avocado"
+"diff.minus" = "morango"
+"diff.delta" = "banana"
+
+"markup.heading.marker" = { fg = "peach", modifiers = ["bold"] }
+"markup.heading.1" = "figo"
+"markup.heading.2" = "uva"
+"markup.heading.3" = "avocado"
+"markup.heading.4" = "banana"
+"markup.heading.5" = "pitaia"
+"markup.heading.6" = "mirtilo"
+"markup.list" = "mirtilo"
+"markup.bold" = { modifiers = ["bold"] }
+"markup.italic" = { modifiers = ["italic"] }
+"markup.link.url" = { fg = "mirtilo", modifiers = ["italic", "underlined"] }
+"markup.link.text" = "mirtilo"
+"markup.raw" = "tomate"
+
+[palette]
+amora    = "#1B2430"
+baunilha = "#F9F9F9"
+banana   = "#FAF4B7"
+avocado  = "#96F7D2"
+mirtilo  = "#B5DEFF"
+figo     = "#CAB8FF"
+pitaya   = "#F5B5FC"
+tomate   = "#FCB1B1"
+uva      = "#51557E"
+pessego  = "#FFBE98"
+morango  = "#D80E70"
