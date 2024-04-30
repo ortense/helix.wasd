@@ -1,0 +1,169 @@
+
+#                .-=--------++:   _     _           _
+#                +==        .@@: | |   | |   ___   | | (_) __  __
+#                ++- :: . =  %%= | |___| |  /   \  | |  _  \ \/ /
+#                =+=  ++*+:  @%* |  ___  | /  ^  | | | | |  \  /
+#                -=*   :.-  .%%# | |   | | |  ---  | | | |  /  \
+#                -=#========*%%# |_|   |_|  \___/  |_| |_| /_/\_\
+#   .......::::.   -=++++++**+:  ......:::---. WASD config v0.1.0
+#  *#-:::::..:#%=.*#-::::...:%%-.*#:::.... :#%-
+#  +*   -:    +%#:+*   -::   *##:++   =-    *%#
+#  **   #%    +%@.**   ::=   *#@.**   + +   *#%
+#  ##  ..-    *#@.#*   =-=.  ##@.**   +=.   ##@
+#  *+-.     .:%#@.#+-.......-%#@.#*-......:-%#@
+#  *|||||||||||%% *||||||||||%%  *#********+*%#
+#   =+*********+.  =+********++.  =++++++++++= 
+# A `metamodern` modal text editor for 21sh century.
+# Just because wasd >> hjkl
+
+theme = "catppuccin_ortz" # custom catppucin mocha theme
+# theme = "ortz_transparent"
+# theme = "ortz"
+
+[keys.normal]
+w = "move_line_up"
+a = "move_char_left"
+s = "move_line_down"
+d = "move_char_right"
+
+e = "extend_line_below"
+q = "no_op"
+
+W = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+A = "move_prev_word_start"
+S = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+D = "move_next_word_start"
+
+C-w = "no_op"
+C-a = ["select_mode", "goto_first_nonwhitespace", "normal_mode"]
+C-s = ":write" 
+C-d = ["select_mode", "goto_line_end", "normal_mode"]
+
+C-q = ":quit"
+C-e = "no_op"
+
+C-W = "no_op"
+C-A = "move_prev_long_word_start"
+C-S = ":write!"
+C-D = "move_next_long_word_start"
+
+C-Q = ":quit!"
+C-E = "no_op"
+
+A-w = "jump_view_up"
+A-a = "jump_view_left"
+A-s = "jump_view_down"
+A-d = "jump_view_right"
+
+I = "append_mode"
+r = "rename_symbol"
+y = [":clipboard-yank", "yank"]
+x = "delete_selection"
+X = ["extend_line_below", "delete_selection"]
+
+C-v = ["paste_clipboard_before"]
+C-V = ["paste_clipboard_after"]
+C-r = ":config-reload"
+C-u = "undo"
+
+h = ":toggle lsp.display-inlay-hints"
+k = "hover"
+
+"?" = ["move_prev_word_start", "select_mode", "move_next_word_start", "normal_mode", "search_selection"]
+esc = ["collapse_selection", "keep_primary_selection"]
+"=" = "increment"
+"minus" = "decrement"
+
+[keys.select]
+w = "extend_visual_line_up"
+a = "extend_char_left"
+s = "extend_visual_line_down"
+d = "extend_char_right"
+
+W = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+A = "goto_line_start"
+S = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+D = "goto_line_end"
+
+C-w = "no_op"
+C-a = "move_prev_word_start"
+C-s = [":write", "normal_mode"]
+C-d = "move_next_word_start"
+
+y = [":clipboard-yank", "yank"]
+x = "delete_selection"
+X = ["extend_line_below", "delete_selection"]
+
+[keys.insert]
+C-w = "no_op"
+C-a = "no_op"
+C-s = [":write", "normal_mode"]
+C-d = "no_op"
+
+A-w = "no_op"
+A-a = "no_op"
+A-s = "no_op"
+A-d = "no_op"
+
+C-q = ":quit"
+C-Q = ":quit!"
+C-r = ":config-reload"
+C-c = "normal_mode"
+C-x = "delete_selection"
+C-e = "extend_line_below" 
+C-y = "yank_to_clipboard"
+C-v = ["paste_clipboard_before"]
+C-V = ["paste_clipboard_after"]
+
+[keys.normal.j]
+b = "jump_backward"
+f = "jump_forward"
+w = "jump_view_up"
+a = "jump_view_left"
+s = "jump_view_down"
+d = "jump_view_right"
+o = "jumplist_picker"
+
+[keys.normal.z]
+w = "scroll_up"
+s = "scroll_down"
+W = "page_up"
+S = "page_down"
+[keys.normal.Z]
+w = "scroll_up"
+s = "scroll_down"
+W = "page_up"
+S = "page_down"
+
+# custom snippets with nap
+# [keys.normal.",".e]
+# e = ["open_below", ":insert-output nap go/ifeen", "collapse_selection", "move_line_down", "delete_selection", "move_line_up", "open_above",  ":write", "normal_mode", "move_line_up"]
+
+
+[editor]
+cursorline = true
+color-modes = true
+true-color = true
+mouse = true
+rulers = [100]
+bufferline = "never"
+gutters = ["diff", "diagnostics", "line-numbers", "spacer"]
+popup-border = "all"
+# line-number="relative"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.indent-guides]
+render = true
+
+[editor.statusline]
+separator = "  "
+left = ["mode", "spinner"]
+center = ["file-name", "read-only-indicator", "file-modification-indicator"]
+right = ["diagnostics", "position", "version-control", "separator"]
+mode.normal = " NORMAL"
+mode.insert = "󱇨 INSERT"
+mode.select = "󰫙 SELECT"

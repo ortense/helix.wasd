@@ -1,0 +1,110 @@
+# GO
+[[language]]
+name = "go"
+scope = "source.go"
+indent = { tab-width = 2, unit = "\t" }
+
+[[language]]
+name = "templ"
+scope = "source.templ"
+indent = { tab-width = 2, unit = "\t" }
+formatter = { "command" = "templ", args = ["fmt"] }
+language-servers = [
+  "templ",
+  "gopls",
+  "html-ls",
+  "css-ls",
+  "tailwind-ls",
+]
+
+# TypeScript / JavaScript
+[language-server.html-ls]
+command = "vscode-html-language-server"
+args = ["--stdio"]
+
+[language-server.emmet-ls]
+command="emmet-language-server"
+args = ["--stdio"]
+
+[language-server.css-ls]
+command = "vscode-css-language-server"
+
+[language-server.tailwind-ls]
+command = "tailwindcss-language-server"
+
+[language-server.deno-lsp]
+command = "deno"
+args = ["lsp"]
+
+[language-server.deno-lsp.config.deno]
+enable = true
+
+[language-server.eslint]
+command = "vscode-eslint-language-server"
+args = ["--stdio"]
+
+[language-server.eslint.config]
+codeActionsOnSave = { mode = "all", "source.fixAll.eslint" = true }
+format = { enable = true }
+nodePath = ""
+quiet = false
+rulesCustomizations = []
+run = "onType"
+validate = "on"
+experimental = {}
+problems = { shortenToSingleLine = false }
+
+[[language]]
+name = "html"
+language-servers = ["vscode-html-language-server", "emmet-ls"]
+
+[[language]]
+name = "jsx"
+scope = "source.jsx"
+indent = { tab-width = 2, unit = "  " }
+language-servers = [
+  "typescript-language-server",
+  "eslint",
+  "emmet-ls",
+  "tailwind-ls",
+]
+
+[[language]]
+name = "tsx"
+scope = "source.tsx"
+indent = { tab-width = 2, unit = "  " }
+language-servers = [
+  "typescript-language-server",
+  "eslint",
+  "emmet-ls",
+  "tailwind-ls",
+]
+
+[[language]]
+name = "javascript"
+scope = "source.js"
+indent = { tab-width = 2, unit = "  " }
+language-servers = ["typescript-language-server", "eslint"]
+
+[[language]]
+name = "typescript"
+language-id = "typescript"
+scope = "source.ts"
+injection-regex = "^(ts|typescript)$"
+file-types = ["ts"]
+shebangs = ["deno"]
+roots = ["deno.json", "deno.jsonc", "package.json"]
+indent = { tab-width = 2, unit = "  " }
+language-servers = ["deno", "typescript-language-server", "eslint"]
+
+# php
+[[language]]
+name = "php"
+scope = "source.php"
+injection-regex = "php"
+file-types = ["php", "inc", "php4", "php5", "phtml", "ctp"]
+shebangs = ["php"]
+roots = ["composer.json", "index.php"]
+comment-token = "//"
+language-servers = [ "intelephense", "emmet-ls" ]
+indent = { tab-width = 4, unit = "    " }
