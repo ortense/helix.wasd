@@ -63,7 +63,7 @@
 
 # User Interface
 # --------------
-"ui.background" = { fg = "text", bg = "base" }
+"ui.background" = { fg = "text", bg = "crust" }
 
 "ui.linenr" = { fg = "surface1" }
 "ui.linenr.selected" = { fg = "lavender" }
@@ -92,6 +92,7 @@
 "ui.virtual.indent-guide" = "surface0"
 "ui.virtual.inlay-hint" = { fg = "surface1" }
 "ui.virtual.jump-label" = { fg = "rosewater", modifiers = ["bold"] }
+"ui.virtual.whitespace" = { fg = "surface0" }
 
 "ui.selection" = { bg = "surface1" }
 

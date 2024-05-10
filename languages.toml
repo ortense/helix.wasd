@@ -18,6 +18,9 @@ language-servers = [
 ]
 
 # TypeScript / JavaScript
+[language-server]
+biome = { command = "biome", args = ["lsp-proxy"] }
+
 [language-server.html-ls]
 command = "vscode-html-language-server"
 args = ["--stdio"]
@@ -61,30 +64,35 @@ language-servers = ["vscode-html-language-server", "emmet-ls"]
 [[language]]
 name = "jsx"
 scope = "source.jsx"
-indent = { tab-width = 2, unit = "  " }
 language-servers = [
-  "typescript-language-server",
-  "eslint",
+  { name = "typescript-language-server", except-features = [ "format" ] },
+  "biome",
   "emmet-ls",
   "tailwind-ls",
 ]
+auto-format = true
 
 [[language]]
 name = "tsx"
 scope = "source.tsx"
-indent = { tab-width = 2, unit = "  " }
 language-servers = [
+  { name = "typescript-language-server", except-features = [ "format" ] },
+  "biome",
   "typescript-language-server",
   "eslint",
   "emmet-ls",
   "tailwind-ls",
 ]
+auto-format = true
 
 [[language]]
 name = "javascript"
 scope = "source.js"
-indent = { tab-width = 2, unit = "  " }
-language-servers = ["typescript-language-server", "eslint"]
+language-servers = [
+  { name = "typescript-language-server", except-features = [ "format" ] },
+  "biome",
+]
+auto-format = true
 
 [[language]]
 name = "typescript"
@@ -94,8 +102,12 @@ injection-regex = "^(ts|typescript)$"
 file-types = ["ts"]
 shebangs = ["deno"]
 roots = ["deno.json", "deno.jsonc", "package.json"]
-indent = { tab-width = 2, unit = "  " }
-language-servers = ["deno", "typescript-language-server", "eslint"]
+language-servers = [
+  { name = "deno", except-features = [ "format" ] },
+  { name = "typescript-language-server", except-features = [ "format" ] },
+  "biome",
+]
+auto-format = true
 
 # php
 [[language]]
